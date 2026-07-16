@@ -1,0 +1,70 @@
+{
+  "skill_name": "design-workflow",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "我们准备做一个城市音乐相册 H5，但现在只有主题和一些照片。先帮我探索两三个信息结构和视觉方向，不要急着写代码。",
+      "expected_output": "Classifies the task as design-stage exploration, reads design-stage.md, proposes substantively different directions, and stops with a design decision record without implementing HTML.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "相册方案已经确认：移动端、深色胶片风、首页进入城市列表，点击后播放音乐并浏览照片。请直接在现有 React H5 里实现，不需要再出其他方案。",
+      "expected_output": "Classifies the task as implementation with HTML/web already selected, skips renewed design exploration, loads html-implementation.md, preserves the approved direction, and verifies the affected React flow.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "把已经确认的城市相册方案做成一份给管理层汇报的正式 PPTX，需要公司母版、演讲者备注，后续业务同学还要自己改文案。",
+      "expected_output": "Does not need the design-workflow router because the medium and requested action are explicit; uses the presentation workflow directly. If design-workflow is already active, it routes immediately without loading HTML rules or substituting an HTML deck.",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "帮我审查 h5-demo/src/App.tsx 的设计问题，先只给问题清单，不要改代码。",
+      "expected_output": "Uses quality-gates.md in review mode, reports evidence-backed findings, and makes no file changes.",
+      "files": [
+        "h5-demo/src/App.tsx"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "把 h5-demo/src/styles.css 里 .album-card 的 gap 从 12px 改成 16px，其他都别动。",
+      "expected_output": "Recognizes a precise mechanical edit and does not start the full design workflow, generate alternatives, or add unrelated design changes.",
+      "files": [
+        "h5-demo/src/styles.css"
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "给现有网页原型加一个演示用调参面板，让客户现场切换两套配色和标题文案；这个面板不进入正式生产版本。",
+      "expected_output": "Uses the HTML implementation guidance and conditionally adds isolated tweak controls because live stakeholder comparison is explicitly requested, while keeping them out of the production UI path.",
+      "files": []
+    },
+    {
+      "id": 7,
+      "prompt": "审查一下这个登录页为什么转化差。我们暂时没有完整品牌资料，也不确定最初是谁设计的；先给问题，不要修改。",
+      "expected_output": "Honors the explicit non-mutating review request instead of falling back to design discovery. If the login page itself is missing, requests the target and does not turn unrelated workspace files into conditional findings. Identifies where missing audience or brand context limits confidence.",
+      "files": []
+    },
+    {
+      "id": 8,
+      "prompt": "这个新会员中心还没决定做成网页还是 Figma 原型。先根据评审协作、交互验证和后续开发交接帮我选载体，再给实施交接清单。",
+      "expected_output": "Triggers because the delivery medium is open, compares the decisive routing factors, recommends one medium, and produces the implementation handoff without applying HTML rules before the choice.",
+      "files": []
+    },
+    {
+      "id": 9,
+      "prompt": "从零设计并实现一个城市音乐相册，最终需要可以通过链接在手机上打开。先把关键方案确定下来，然后继续做成 H5。",
+      "expected_output": "Triggers for a cross-stage request, completes the necessary design decision record, transitions to HTML implementation after H5 is selected, and verifies the resulting web experience without stopping after design-only output.",
+      "files": []
+    },
+    {
+      "id": 10,
+      "prompt": "方案已经确定，必须交付可编辑的 Figma 文件，但当前环境如果没有 Figma 能力也不要改成网页。",
+      "expected_output": "Uses the dedicated Figma capability when available. If unavailable, states the limitation and provides a Figma-oriented handoff specification or checklist without silently substituting HTML.",
+      "files": []
+    }
+  ]
+}
+
